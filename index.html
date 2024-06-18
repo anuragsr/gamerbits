@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Banner</title>
+</head>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	input:focus,
+	select:focus,
+	textarea:focus,
+	button:focus {
+	    outline: none;
+	}
+	body, html{
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		font-family:Impact, sans-serif; 
+		background: url(img/bg2.jpg) no-repeat center;
+		background-size: cover;
+	}
+	h2{
+		font-weight: normal;
+	}
+	.slide{
+		opacity:0;
+	}
+	.banner{
+		overflow: hidden;
+		position: relative;
+		box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+		margin: 0 auto; 
+		background: #000;
+	}
+	.desk-banner{
+		width: 728px;
+		height: 90px;
+	}
+	.mob-banner{
+		width: 320px;
+		height: 100px;
+	}
+	.obstacle, .ground, .cloud, .btn{
+		position: absolute;
+		top:0;
+		left:0;
+		height: 100%;
+		width: 100%;
+	}
+	.desk-banner .ground{
+		background: url(img/ground.png) repeat-x 500% 150%;
+	}
+	.mob-banner .ground{
+		background: url(img/ground.png) repeat-x 1000% 150%;
+	}
+	.cloud{
+		background: url(img/clouds.png) no-repeat;
+	}
+	.cloud1{
+		left:100%;
+	}
+	.cloud2{
+		left:200%;
+	}
+	.cloud3{
+		left:300%;
+	}
+	.obstacle{
+		top:50%;
+		background: url(img/obstacle.png) no-repeat;
+	}
+	.obstacle1{
+		left:100%;
+	}
+	.obstacle2{
+		left:200%;
+	}
+	.obstacle3{
+		left:300%;
+	}
+	.obstacle4{
+		left:400%;
+	}
+	.logo-btn{
+		background: #6bbe6b;
+		border-radius: 10px;
+		left:150px;
+		top:20px;
+		width: 270px;
+		height: 50px;
+		cursor: pointer;
+	}
+	.link-btn{
+		top: 25px;
+		left:90%;
+		background: #fff;
+		border-radius: 10px;
+		height: 40px;
+		width: 90px;
+		cursor: pointer;
+		color: #6bbe6b;
+		box-sizing: border-box;
+		font-size: 22px;
+		transform: rotateZ(-90deg);
+		font-family: Impact;
+	}
+	.slider-text{
+		font-weight: bold;
+		position: absolute;
+		left:60%;
+		top:0;
+		width: 250px;
+		font-size: 36px;
+		color: #fff;
+	}
+	.slider-text span{
+		color: #f00;
+	}
+	.person{
+		position: absolute;
+		bottom: 15px;
+		left: 20px;
+	  	height: 32px;
+		width: 32px;
+	  	background: url('img/Player.png') left center;
+	  	-webkit-animation: play 1s steps(7) infinite;
+           -moz-animation: play 1s steps(7) infinite;
+            -ms-animation: play 1s steps(7) infinite;
+             -o-animation: play 1s steps(7) infinite;
+  			  	animation: play 1s steps(7) infinite;
+	}
+	@-webkit-keyframes play {
+		100% { background-position: -224px; }
+	}
+
+	@-moz-keyframes play {
+		100% { background-position: -224px; }
+	}
+
+	@-ms-keyframes play {
+		100% { background-position: -224px; }
+	}
+
+	@-o-keyframes play {
+		100% { background-position: -224px; }
+	}
+
+	@keyframes play {
+		100% { background-position: -224px; }
+	}
+
+	img.stars{
+		position: absolute;
+		top: 5px;
+		left: 50px;
+	}
+	img.dragon{
+		position: absolute;
+		top: 5px;
+		left: 100%;
+	}
+	.p2{
+		position: absolute;
+		top:25px;
+		left:125%;
+		-moz-transform: scaleX(-1);
+	    -o-transform: scaleX(-1);
+	    -webkit-transform: scaleX(-1);
+	    transform: scaleX(-1);
+	    zoom:1.2;
+	}
+	.slider-text2{
+		position: absolute;
+		top: 15px;
+		left: 100%;
+		color: #000;
+		font-weight: 100;
+		font-size: 48px;
+		width: 125%;
+	}
+	.mob-banner .logo-btn{
+		zoom:0.7;
+	}
+	.mob-banner .slider-text, .mob-banner .link-btn{
+		opacity:0;
+	}
+	.mob-banner img.dragon{
+		left: 100%;
+	}
+	.mob-banner .p2{
+		left:200%;
+		top:50px;
+	}
+	.mob-banner .slider-text2{
+		width: 300%;
+	}
+</style>
+<body>
+	<br/>
+	<h2>Desktop (728 X 90)</h2><br/>
+	<div class="banner desk-banner">
+		<div class="slide slide1">
+			<div class="ground">
+			</div>
+			<div class="cloud cloud1">
+			</div>
+			<div class="cloud cloud2">
+			</div>
+			<div class="cloud cloud3">
+			</div>
+			<div class="obstacle obstacle1">
+			</div>
+			<div class="obstacle obstacle2">
+			</div>
+			<div class="obstacle obstacle3">
+			</div>
+			<div class="obstacle obstacle4">
+			</div>
+			<button class="btn logo-btn"><img src="img/logo.png" height="40"></button>
+			<button class="btn link-btn">gbits.io</button>
+			<div class="slider-text">
+				LIMITED<br/> ICO<br/>
+				<span>CHINESE</span> ESPORTS
+			</div>
+			<div class="person"></div>
+		</div>
+		<div class="slide slide2">
+			<img class="stars" src="img/stars.png" height="80">
+			<img class="dragon" src="img/dragon.png" height="80">
+			<div class="person p2"></div>
+			<div class="slider-text2">GAMERBITS LIMITED CHINESE ESPORTS ICO</div>
+		</div>
+	</div><br/>
+	<h2>Mobile (320 X 100)</h2><br/>
+	<div class="banner mob-banner">
+		<div class="slide slide1">
+			<div class="ground">
+			</div>
+			<div class="cloud cloud1">
+			</div>
+			<div class="cloud cloud2">
+			</div>
+			<div class="cloud cloud3">
+			</div>
+			<div class="obstacle obstacle1">
+			</div>
+			<div class="obstacle obstacle2">
+			</div>
+			<div class="obstacle obstacle3">
+			</div>
+			<div class="obstacle obstacle4">
+			</div>
+			<button class="btn logo-btn"><img src="img/logo.png" height="40"></button>
+			<button class="btn link-btn">gbits.io</button>
+			<div class="slider-text">
+				LIMITED<br/> ICO<br/>
+				<span>CHINESE</span> ESPORTS
+			</div>
+			<div class="person"></div>
+		</div>
+		<div class="slide slide2">
+			<img class="stars" src="img/stars.png" height="80">
+			<img class="dragon" src="img/dragon.png" height="80">
+			<div class="person p2"></div>
+			<div class="slider-text2">GAMERBITS LIMITED CHINESE ESPORTS ICO</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var deskTl = new TimelineMax({
+			repeat: -1,
+			ease: Linear.easeNone
+		})/*,
+		mobTl = new TimelineMax({
+			repeat: -1,
+			ease: Linear.easeNone
+		})*/
+		,time = 10
+		;
+
+		deskTl
+		.to(".slide1", 1, {opacity:1})
+		.to(".banner .ground", time, {autoRound:false, backgroundPosition:"0% 150%"}, "slide1Label")
+		.to(".banner .cloud1", time, {left:"-300%"}, "slide1Label")
+		.to(".banner .cloud2", time, {left:"-200%"}, "slide1Label")
+		.to(".banner .cloud3", time, {left:"-100%"}, "slide1Label")
+		.to(".banner .obstacle1", time, {left:"-300%"}, "slide1Label+=1")
+		.to(".banner .obstacle2", time, {left:"-200%"}, "slide1Label+=1")
+		.to(".banner .obstacle3", time, {left:"-100%"}, "slide1Label+=1")
+		.to(".banner .obstacle4", time, {left:"-20%"}, "slide1Label+=1")
+		.to(".slider-text", time-2, {top:"-100%"}, "slide1Label+=2")
+		.add("changeSlide", "slide1Label+=9")
+		.to(".slide1", 1, {opacity:0}, "changeSlide")
+		.to(".slide2", 1, {opacity:1}, "changeSlide")
+		.to(".banner", 1, {backgroundColor:"#f00"}, "changeSlide+=0.2")
+		.to(".dragon", time/1.5, {left:"-50%"}, "slide2Label")
+		.to(".mob-banner .dragon", time/1.5, {left:"-100%"}, "slide2Label")
+		.to(".p2", time/1.5, {left:"-25%"}, "slide2Label+=1")
+		.to(".slider-text2", time/1.5, {left:"-25%"}, "slide2Label+=2")
+		.to(".mob-banner .slider-text2", time/1.5, {left:"-200%"}, "slide2Label+=2")
+		.to(".slide2", 1, {opacity:0}, "changeSlide2")
+		.to(".banner", 1, {backgroundColor:"#000"}, "changeSlide2")
+		;
+		//deskTl.seek("changeSlide").play();
+		//deskTl.seek("slide1Label").pause();
+		TweenMax.fromTo(".logo-btn", 1, {
+			boxShadow:"0px 0px 0px 0px rgba(255,255,255,0.4)"
+		},{
+			repeat:-1,
+			yoyo:true,
+			boxShadow:"0px 0px 20px 10px rgba(255,255,255,1)"
+		})
+
+		/*mobTl
+		.to(".mob-banner .ground", 5, {autoRound:false, backgroundPosition:"0% 150%"})
+		;*/
+
+		$("button").on("mouseenter", function(){
+			TweenMax.to(this, 0.5, {scale:1.2})
+		});
+
+		$("button").on("mouseleave", function(){
+			TweenMax.to(this, 1, {scale:1})
+		});
+	});
+
+
+	</script>
+</body>
+</html>
